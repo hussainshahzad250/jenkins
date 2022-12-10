@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages { 
+        stage('Hello World') {
+            steps{
+                echo 'welcome to jenkins pipeling learning...'
+            }
+        }
+        stage('Clone Repo') {
+            steps{
+                git 'https://github.com/ravdy/nodejs-demo.git'
+            }
+        }
+        stage('Print Date') {
+            steps{
+               script {
+                    def now = new Date()
+                    println now.format("dd-MM-yyyy HH:mm:ss", TimeZone.getTimeZone('IST'))
+                }
+            }
+        }
+    }
+}
