@@ -1,0 +1,20 @@
+
+pipeline {
+    agent any
+    stages {
+        stage('Start EC2 Instance') {
+            steps {
+                script {
+                    def instanceId = 'YOUR_INSTANCE_ID'
+                    def instanceStatus = sh(script: "aws ec2 describe-instances --instance-ids ${instanceId} --query 'Reservations[].Instances[].State.Name' --output text", returnStdout: true).trim()
+                    if (instanceStatus != 'running') {
+                        sh "aws ec2 start-instances --instance-ids ${instanceId}"
+                        echo "EC2 instance ${instanceId} has been started."
+                    } else {
+                        echo "EC2 instance ${instanceId} is already running."
+                    }
+                }
+            }
+        }
+    }
+}
