@@ -59,3 +59,19 @@ docker run -d --restart=always -p 127.0.0.1:2376:2375 --network jenkins -v /var/
 ```
 docker inspect <container_id> | grep IPAddress
 ```
+
+
+## Create docker images from docker container and push to docker hub
+
+docker commit <container_id> your-docker-hub-username/your-image-name:tag
+```
+docker commit 90bb807b5928 husssainshahzad/jenkins:1.0
+```
+
+```
+docker login
+```
+
+```
+docker push husssainshahzad/jenkins:1.0
+```
