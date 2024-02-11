@@ -12,7 +12,7 @@
   ## Run the Container
   
   ### 1.  MacOS / Linux
-    ```
+  ```
     docker run --name jenkins-blueocean --restart=on-failure --detach \
       --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
       --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
@@ -20,27 +20,27 @@
       --volume jenkins-data:/var/jenkins_home \
       --volume jenkins-docker-certs:/certs/client:ro \
       myjenkins:1.0
-    ```
+  ```
   
   ### 2.  Windows
-    ```
+  ```
     docker run --name jenkins-blueocean --restart=on-failure --detach `
       --network jenkins --env DOCKER_HOST=tcp://docker:2376 `
       --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 `
       --volume jenkins-data:/var/jenkins_home `
       --volume jenkins-docker-certs:/certs/client:ro `
       --publish 8080:8080 --publish 50000:50000 myjenkins:1.0
-    ```
+  ```
   
   ## Get the Password
-    ```
-    docker exec jenkins-blueocean cat /var/jenkins_home/secrets/initialAdminPassword
-    ```
+  ```
+  docker exec jenkins-blueocean cat /var/jenkins_home/secrets/initialAdminPassword
+  ```
   
   ## Connect to the Jenkins
-    ```
-    https://localhost:8080/
-    ```
+  ```
+  https://localhost:8080/
+  ```
   
   ## Installation Reference:
     https://www.jenkins.io/doc/book/installing/docker/
@@ -64,18 +64,22 @@
 
   docker commit <container_id> your-docker-hub-username/your-image-name:tag
   ###  Ste-1 commit latest container changes
-    ```
-    docker commit 90bb807b5928 husssainshahzad/jenkins:1.0
-    ```
+    
+  ```
+  docker commit 90bb807b5928 husssainshahzad/jenkins:1.0
+  ```
+    
   ###  Login to docker hub
-    ```
-    docker login
-    ```
+    
+  ```
+  docker login
+  ```
+    
   ###  Push latest docker image
-    ```
-    docker push husssainshahzad/jenkins:1.0
-    ```
-
+  
+  ```
+  docker push husssainshahzad/jenkins:1.0
+  ```
 #  Setup jenkins using docker container
 
   1.  ##  Pull docker image
