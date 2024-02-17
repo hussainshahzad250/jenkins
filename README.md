@@ -88,7 +88,7 @@
       ```
   2.  ##  Run below command to start jenkins
       ```
-      docker run --name jenkins-blueocean --restart=on-failure --detach \
+      docker run --name new-jenkins --restart=on-failure --detach \
         --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
         --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
         --publish 8085:8080 --publish 51000:50000 \
