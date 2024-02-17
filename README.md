@@ -84,7 +84,7 @@
 
   1.  ##  Pull docker image
       ```
-      docker push husssainshahzad/jenkins:1.0
+      docker pull husssainshahzad/jenkins:1.0
       ```
   2.  ##  Run below command to start jenkins
       ```
