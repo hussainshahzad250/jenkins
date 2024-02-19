@@ -86,7 +86,13 @@
       ```
       docker pull husssainshahzad/jenkins:1.2
       ```
-  2.  ##  Run below command to start jenkins
+
+  2.  ##  create network
+      ```
+      docker network create jenkins
+      ```
+      
+  3.  ##  Run below command to start jenkins
       ```
       docker run --name new-jenkins --restart=on-failure --detach \
         --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
@@ -96,7 +102,7 @@
         --volume jenkins-docker-certs:/certs/client:ro \
         husssainshahzad/jenkins:1.2
       ```
-  3.  ## Use below credential to login
+  4.  ## Use below credential to login
            [Login To Jenkins](http://localhost:8080/)
            -  username:  shahzad
            -  password:  shahzad
